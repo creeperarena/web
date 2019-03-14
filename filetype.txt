@@ -1,0 +1,13 @@
+...\wwww-228014\files
+...\wwww-228014\apps
+
+.swf
+.css
+.js
+.json
+.svg
+.png
+.jpg
+.woff2
+.eto
+.ttf

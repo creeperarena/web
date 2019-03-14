@@ -1,0 +1,45 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /
+  script: index.html
+
+# Serve php scripts.
+- url: /(.+\.php)$
+  script: \1
+  
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /css/(.*\.css)
+  mime_type: text/css
+  static_files: css/\1
+  upload: css/(.*\.css)
+
+- url: /scripts/(.*\.js)
+  mime_type: text/javascript
+  static_files: scripts/\1
+  upload: scripts/(.*\.js)
+  
+# Serve images as static resources.
+# - url: /(.+\.(gif|png|jpg|css|js))$
+  # static_files: \1
+  # upload: .+\.(gif|png|jpg|css|js)$
+  # application_readable: true
+  
+# image files
+- url: /images/(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: images/\1
+  upload: images/(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  application_readable: true
+  
+- url: /phone/
+  script: phone/index.html
+- url: /phone/index.html
+  script: phone/index.html
+- url: /phone/css/(.*\.css)
+  mime_type: text/css
+  static_files: phone/css/\1
+  upload: phone/css/(.*\.css)
